@@ -17,3 +17,7 @@
 #### brain-progression
 
 [![asciicast](https://asciinema.org/a/CtYyEz25TfwnsDzZyiuXGuwST.svg)](https://asciinema.org/a/CtYyEz25TfwnsDzZyiuXGuwST)
+
+#### brime-prime
+
+[![asciicast](https://asciinema.org/a/rfAgfSk1ikbKlvliUZ4B45S5y.svg)](https://asciinema.org/a/rfAgfSk1ikbKlvliUZ4B45S5y)
