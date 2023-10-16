@@ -4,7 +4,7 @@ const maxValue = 10;
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (value) => {
-  if (value <= 0) {
+  if (value <= 1) {
     return false;
   }
   for (let i = 2; i < value; i += 1) {
