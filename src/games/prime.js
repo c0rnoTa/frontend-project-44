@@ -1,4 +1,5 @@
 import playGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const maxValue = 10;
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -15,7 +16,7 @@ const isPrime = (value) => {
   return true;
 };
 
-const getQuestion = () => Math.floor(Math.random() * maxValue);
+const getQuestion = () => getRandomNumber(maxValue);
 const getSolution = (question) => (isPrime(parseInt(question, 10)) ? 'yes' : 'no');
 
 export default () => playGame(rules, getQuestion, getSolution);

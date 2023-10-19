@@ -1,4 +1,5 @@
 import playGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 // Progression constrains
 const minLength = 5;
@@ -9,12 +10,10 @@ const maxIncrement = 10;
 const rules = 'What number is missing in the progression?';
 let missingValue = '';
 
-const getRandom = (max) => Math.floor(Math.random() * max);
-
 const getQuestion = () => {
-  const progressionSize = minLength + getRandom(maxLength - minLength);
-  const startValue = getRandom(maxStartValue);
-  const increment = getRandom(maxIncrement);
+  const progressionSize = minLength + getRandomNumber(maxLength - minLength);
+  const startValue = getRandomNumber(maxStartValue);
+  const increment = getRandomNumber(maxIncrement);
 
   // Generate progression
   const progression = [];
@@ -23,7 +22,7 @@ const getQuestion = () => {
   }
 
   // Select value to remove but not the first one
-  const index = getRandom(progressionSize - 1) + 1;
+  const index = getRandomNumber(progressionSize - 1) + 1;
   missingValue = progression[index];
 
   // Remove the value

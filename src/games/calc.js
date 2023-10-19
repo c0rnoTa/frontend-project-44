@@ -1,13 +1,13 @@
 import playGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const maxValue = 99;
 const rules = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const getNumber = () => Math.floor(Math.random() * maxValue);
-const getOperation = () => operations[Math.floor(Math.random() * operations.length)];
+const getOperation = () => operations[getRandomNumber(operations.length)];
 
-const getQuestion = () => `${getNumber()} ${getOperation()} ${getNumber()}`;
+const getQuestion = () => `${getRandomNumber(maxValue)} ${getOperation()} ${getRandomNumber(maxValue)}`;
 const getSolution = (question) => {
   const [a, operation, b] = question.split(' ');
   switch (operation) {
