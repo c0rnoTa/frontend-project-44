@@ -1,4 +1,4 @@
-import playGame from '../src/index.js';
+import playGame from '../index.js';
 
 const maxValue = 99;
 const rules = 'Find the greatest common divisor of given numbers.';
