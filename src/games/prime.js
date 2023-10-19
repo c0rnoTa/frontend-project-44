@@ -1,4 +1,4 @@
-import playGame from '../src/index.js';
+import playGame from '../index.js';
 
 const maxValue = 10;
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
