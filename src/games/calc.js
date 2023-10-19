@@ -24,7 +24,7 @@ const getRaundData = () => {
   const a = getRandomNumber(maxValue);
   const b = getRandomNumber(maxValue);
   const question = `${a} ${operation} ${b}`;
-  const solution = calc(a, operation, b);
+  const solution = `${calc(a, operation, b)}`;
   return [question, solution];
 };
 
