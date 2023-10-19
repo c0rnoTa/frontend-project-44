@@ -16,7 +16,11 @@ const isPrime = (value) => {
   return true;
 };
 
-const getQuestion = () => getRandomNumber(maxValue);
-const getSolution = (question) => (isPrime(parseInt(question, 10)) ? 'yes' : 'no');
+const getRaundData = () => {
+  const question = getRandomNumber(maxValue);
+  const solution = isPrime(parseInt(question, 10)) ? 'yes' : 'no';
 
-export default () => playGame(rules, getQuestion, getSolution);
+  return [question, solution];
+};
+
+export default () => playGame(rules, getRaundData);

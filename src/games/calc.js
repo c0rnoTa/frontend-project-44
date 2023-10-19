@@ -19,13 +19,13 @@ const calc = (a, operation, b) => {
   }
 };
 
-const getOperation = () => operations[getRandomNumber(operations.length)];
-
-const getQuestion = () => `${getRandomNumber(maxValue)} ${getOperation()} ${getRandomNumber(maxValue)}`;
-const getSolution = (question) => {
-  const [a, operation, b] = question.split(' ');
-  const calcutaionResult = calc(parseInt(a, 10), operation, parseInt(b, 10));
-  return `${calcutaionResult}`;
+const getRaundData = () => {
+  const operation = operations[getRandomNumber(operations.length)];
+  const a = getRandomNumber(maxValue);
+  const b = getRandomNumber(maxValue);
+  const question = `${a} ${operation} ${b}`;
+  const solution = calc(a, operation, b);
+  return [question, solution];
 };
 
-export default () => playGame(rules, getQuestion, getSolution);
+export default () => playGame(rules, getRaundData);

@@ -24,13 +24,15 @@ const sayWin = () => console.log(`Congratulations, ${playerName}!`);
 
 const sayWrong = (answer, solution) => console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.\nLet's try again, ${playerName}!`);
 
-export default (rules, getQuestion, getSolution) => {
+export default (rules, getRaundData) => {
   greeting(rules);
 
   for (let i = 0; i < questionCount; i += 1) {
-    const question = getQuestion();
+    const raundData = getRaundData();
+    const question = raundData[0];
+    const solution = raundData[1];
+
     const answer = getAnswer(question);
-    const solution = getSolution(question);
     if (answer !== solution) {
       return sayWrong(answer, solution);
     }

@@ -10,7 +10,7 @@ const maxIncrement = 10;
 const rules = 'What number is missing in the progression?';
 let missingValue = '';
 
-const getQuestion = () => {
+const generateProgression = () => {
   const progressionSize = minLength + getRandomNumber(maxLength - minLength);
   const startValue = getRandomNumber(maxStartValue);
   const increment = getRandomNumber(maxIncrement);
@@ -20,17 +20,22 @@ const getQuestion = () => {
   for (let i = 0; i < progressionSize; i += 1) {
     progression.push(startValue + increment * i);
   }
+  return progression;
+};
+
+const getRaundData = () => {
+  const progression = generateProgression();
 
   // Select value to remove but not the first one
-  const index = getRandomNumber(progressionSize - 1) + 1;
+  const index = getRandomNumber(progression.length - 1) + 1;
   missingValue = progression[index];
 
   // Remove the value
   progression[index] = '..';
 
-  return progression.join(' ');
+  const question = progression.join(' ');
+  const solution = `${missingValue}`;
+  return [question, solution];
 };
 
-const getSolution = () => `${missingValue}`;
-
-export default () => playGame(rules, getQuestion, getSolution);
+export default () => playGame(rules, getRaundData);
