@@ -8,7 +8,6 @@ const maxStartValue = 20;
 const maxIncrement = 10;
 
 const rules = 'What number is missing in the progression?';
-let missingValue = '';
 
 const generateProgression = () => {
   const progressionSize = minLength + getRandomNumber(maxLength - minLength);
@@ -28,7 +27,7 @@ const getRaundData = () => {
 
   // Select value to remove but not the first one
   const index = getRandomNumber(progression.length - 1) + 1;
-  missingValue = progression[index];
+  const missingValue = progression[index];
 
   // Remove the value
   progression[index] = '..';
