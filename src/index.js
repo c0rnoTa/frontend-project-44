@@ -28,7 +28,12 @@ export default (rules, getRaundData) => {
   greeting(rules);
 
   for (let i = 0; i < questionCount; i += 1) {
-    const raundData = getRaundData();
+    let raundData = null;
+    try {
+      raundData = getRaundData();
+    } catch (e) {
+      return console.error(e);
+    }
     const question = raundData[0];
     const solution = raundData[1];
 

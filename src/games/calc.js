@@ -14,8 +14,7 @@ const calc = (a, operation, b) => {
     case '*':
       return a * b;
     default:
-      console.log('unsupported operation');
-      return null;
+      throw new Error(`Math operation '${operation}' not defined!`);
   }
 };
 
