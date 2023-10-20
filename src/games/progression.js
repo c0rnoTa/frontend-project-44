@@ -9,12 +9,12 @@ const maxIncrement = 10;
 
 const rules = 'What number is missing in the progression?';
 
+// Generate progression
 const generateProgression = () => {
   const progressionSize = minLength + getRandomNumber(maxLength - minLength);
   const startValue = getRandomNumber(maxStartValue);
   const increment = getRandomNumber(maxIncrement);
 
-  // Generate progression
   const progression = [];
   for (let i = 0; i < progressionSize; i += 1) {
     progression.push(startValue + increment * i);
